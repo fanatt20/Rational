@@ -5,5 +5,5 @@ install:
   - nuget restore ./RationalMath/RationalMath.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
-  - xbuild /p:Configuration=Release RationalMath/RationalMath.sln
-  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./RationalMath/RationalMath.Tests/bin/Release/RationalMath.Tests.dll
+  - xbuild /p:Configuration=Debug RationalMath/RationalMath.sln
+  - mono ./testrunner/NUnit.Runners.2.6.4/tools/nunit-console.exe ./RationalMath/RationalMath.Tests/bin/Debug/RationalMath.Tests.dll
