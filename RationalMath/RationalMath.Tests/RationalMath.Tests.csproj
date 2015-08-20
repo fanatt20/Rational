@@ -53,6 +53,12 @@
     <Compile Include="Rational.Tests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RationalMath\RationalMath.csproj">
+      <Project>{2343f53d-8ac4-48f4-a90b-4859749c064d}</Project>
+      <Name>RationalMath</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>
