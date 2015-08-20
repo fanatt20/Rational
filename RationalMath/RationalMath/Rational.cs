@@ -1,22 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RationalMath
 {
     public struct Rational
     {
-        
-        private int _numerator;
+        private static double _eps = 0.000001;
         private int _denominator;
-        public int Numerator
+
+        public Rational(int numerator, int denominator = 1)
+            : this()
         {
-            get { return _numerator; }
-            set { _numerator = value; }
+            Numerator = numerator;
+            Denominator = denominator;
         }
+
+        public static double Eps
+        {
+            get { return _eps; }
+            set
+            {
+                if(value <= 0)
+                    throw new ArgumentOutOfRangeException("Eps must be non negative");
+                _eps = value;
+            }
+        }
+
+        public int Numerator { get; set; }
+
         public int Denominator
         {
             get
@@ -33,11 +43,44 @@ namespace RationalMath
             }
         }
 
-        public Rational(int numerator, int denominator=1):this()
+        public double ToDouble()
         {
-            Numerator = numerator;
-            Denominator = denominator;
+            return Numerator / Denominator;
+        }
 
+        public static implicit operator double(Rational val)
+        {
+            return val.Numerator / val.Denominator;
+        }
+
+        public static explicit operator float(Rational val)
+        {
+            return val.Numerator / val.Denominator;
+        }
+
+        public static explicit operator int(Rational val)
+        {
+            return val.Numerator / val.Denominator;
+        }
+        
+        public static bool operator ==(Rational val, double other)
+        {
+            return Math.Abs(other - val) <= Eps;
+        }
+
+        public static bool operator !=(Rational val, double other)
+        {
+            return Math.Abs(other - val) > Eps;
+        }
+
+        public static bool operator >(Rational val, double other)
+        {
+            return val > other;
+        }
+
+        public static bool operator <(Rational val, double other)
+        {
+            return val < other;
         }
     }
 }
