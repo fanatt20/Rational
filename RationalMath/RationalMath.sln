@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RationalMath", "Rattional\RationalMath.csproj", "{2343F53D-8AC4-48F4-A90B-4859749C064D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RationalMath", "RationalMath\RationalMath.csproj", "{2343F53D-8AC4-48F4-A90B-4859749C064D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RationalMath.Tests", "RationalMath.Tests\RationalMath.Tests.csproj", "{DA0246C7-2944-41B8-AC9A-04CD66F4688C}"
 EndProject
