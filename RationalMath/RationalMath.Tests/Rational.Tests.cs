@@ -72,5 +72,31 @@ namespace RationalMath.Tests
             var sum = rat + other;
             Assert.AreEqual(151, (double)sum);
         }
+        [TestMethod]
+        public void TestMinus_WithOtherRational_Passed()
+        {
+            var rat = new Rational(625, 5);
+            var other = new Rational(338, 13);
+            var minus = rat - other;
+            Assert.AreEqual(99, (double)minus);
+        }
+        [TestMethod]
+        public void TestMultiply_WithOtherRational_Passed()
+        {
+            var rat = new Rational(625, 5);
+            var other = new Rational(338, 13);
+            var mult = rat * other;
+            Assert.AreEqual(3250, (double)mult);
+        }
+        [TestMethod]
+        public void TestDivide_WithOtherRational_Passed()
+        {
+            var rat = new Rational(625, 5);
+            var other = new Rational(338, 13);
+            var div = rat / other;
+            Assert.AreEqual(125, div.Numerator);
+            Assert.AreEqual(26,div.Denominator);
+        }
+        
     }
 }

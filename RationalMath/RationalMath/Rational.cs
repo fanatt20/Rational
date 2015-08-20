@@ -45,8 +45,23 @@ namespace RationalMath
 
         public static Rational operator +(Rational val, Rational other)
         {
-            return new Rational(val.Numerator*other.Denominator+val.Denominator*other.Numerator,val.Denominator*val.Denominator);
+            return new Rational(val.Numerator*other.Denominator+val.Denominator*other.Numerator,val.Denominator*other.Denominator);
             
+        }
+
+        public static Rational operator -(Rational val, Rational other)
+        {
+            return new Rational(val.Numerator * other.Denominator - val.Denominator * other.Numerator, val.Denominator * other.Denominator);
+        }
+
+        public static Rational operator *(Rational val, Rational other)
+        {
+            return new Rational(val.Numerator*other.Numerator,val.Denominator*val.Denominator);
+        }
+
+        public static Rational operator /(Rational val, Rational other)
+        {
+            return  new Rational(val.Numerator*other.Denominator,val.Denominator*other.Numerator);
         }
 
         public static explicit operator double(Rational val)
