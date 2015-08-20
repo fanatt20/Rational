@@ -12,16 +12,16 @@ namespace RationalMath.Tests
             var rat = new Rational(625, 5);
             var other = new Rational(338, 13);
             var sum = rat + other;
-            Assert.AreEqual(151, (double) sum, "Invalid Sum operation");
+            Assert.AreEqual(151, (double)sum, "Invalid Sum operation");
         }
 
         [Test]
         public void TestCompare_withDoubleFloatInt_Passed()
         {
-            var rat = new Rational(, 5);
-            Assert.AreEqual(125, (double) rat, "Invalid cast to double");
-            Assert.AreEqual(125, (float) rat, "Invalid cast to float");
-            Assert.AreEqual(125, (int) rat, "Invalid cast to int");
+            var rat = new Rational(125, 5);
+            Assert.AreEqual(125, (double)rat, "Invalid cast to double");
+            Assert.AreEqual(125, (float)rat, "Invalid cast to float");
+            Assert.AreEqual(125, (int)rat, "Invalid cast to int");
         }
 
         [Test]
@@ -32,32 +32,21 @@ namespace RationalMath.Tests
         }
 
         [Test]
+        [ExpectedException]
         public void TestCtor_DivideByZero_ThrowException()
         {
-            try
-            {
-                var rat = new Rational(4, 0);
-                Assert.Fail("Exception must be thrown in constructor ");
-            }
-            catch (DivideByZeroException)
-            {
-                Assert.IsTrue(true);
-            }
+            var rat = new Rational(4, 0);
+            Assert.Fail("Exception must be thrown in constructor ");
         }
 
         [Test]
+        [ExpectedException]
         public void TestDenominator_SettingZero_thrownException()
         {
             var rat = new Rational(10, 7);
-            try
-            {
-                rat.Denominator = 0;
-                Assert.Fail("Denominator is Changed to zero but exception wasn't throw");
-            }
-            catch (DivideByZeroException)
-            {
-                Assert.IsTrue(true);
-            }
+            rat.Denominator = 0;
+            Assert.Fail("Denominator is Changed to zero but exception wasn't throw");
+
         }
 
         [Test]
@@ -65,7 +54,7 @@ namespace RationalMath.Tests
         {
             var rat = new Rational(7, 5);
             var other = new Rational(5, 7);
-            var div = rat/other;
+            var div = rat / other;
             Assert.AreEqual(49, div.Numerator, "Invalid divide operation");
             Assert.AreEqual(25, div.Denominator, "Invalid divide operation");
         }
@@ -76,7 +65,7 @@ namespace RationalMath.Tests
             var rat = new Rational(625, 5);
             var other = new Rational(338, 13);
             var minus = rat - other;
-            Assert.AreEqual(99, (double) minus, "Invalid minus operation");
+            Assert.AreEqual(99, (double)minus, "Invalid minus operation");
         }
 
         [Test]
@@ -84,8 +73,8 @@ namespace RationalMath.Tests
         {
             var rat = new Rational(625, 5);
             var other = new Rational(338, 13);
-            var mult = rat*other;
-            Assert.AreEqual(3250, (double) mult, "Invalid multiply operation");
+            var mult = rat * other;
+            Assert.AreEqual(3250, (double)mult, "Invalid multiply operation");
         }
 
         [Test]
