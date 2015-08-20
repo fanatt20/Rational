@@ -4,7 +4,6 @@ namespace RationalMath
 {
     public struct Rational
     {
-        private static double _eps = 0.000001;
         private int _denominator;
 
         public Rational(int numerator, int denominator = 1)
@@ -12,17 +11,6 @@ namespace RationalMath
         {
             Numerator = numerator;
             Denominator = denominator;
-        }
-
-        public static double Eps
-        {
-            get { return _eps; }
-            set
-            {
-                if (value <= 0)
-                    throw new ArgumentOutOfRangeException("Eps must be non negative");
-                _eps = value;
-            }
         }
 
         public int Numerator { get; set; }
