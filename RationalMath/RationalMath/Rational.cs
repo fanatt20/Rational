@@ -22,6 +22,8 @@ namespace Rattional
         public Rational(int numerator,int denominator )
         {
             _numerator = numerator;
+            if (denominator==0)
+                throw new DivideByZeroException();
             _denominator = denominator;
         }
     }
