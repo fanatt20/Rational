@@ -12,28 +12,28 @@ namespace RationalMath.Tests
         {
             try {
                 var rat = new Rational(4, 0);
-                Debug.Fail("");
+                Assert.Fail("");
             }
             catch(DivideByZeroException) {
 
-                Debug.Assert(true);
+                Assert.IsTrue(true);
             }
         }
         [TestMethod]
         public void TestCtor_CorretcData_Created()
         {
             var rat = new Rational(10, 4);
-            Debug.Assert(true);
+            Assert.IsTrue(true);
         }
         [TestMethod]
         public void TestProperties_SettingGetting_Passed()
         {
             var rat = new Rational(10, 4);
-            Debug.Assert(rat.Numerator == 10 && rat.Denominator == 4);
+            Assert.IsTrue(rat.Numerator == 10 && rat.Denominator == 4);
             rat.Denominator = -13;
-            Debug.Assert(rat.Denominator == -13);
+            Assert.IsTrue(rat.Denominator == -13);
             rat.Numerator = 0;
-            Debug.Assert(rat.Numerator == 0);
+            Assert.IsTrue(rat.Numerator == 0);
         }
         [TestMethod]
         public void TestDenominator_SettingZero_thrownException()
@@ -41,11 +41,11 @@ namespace RationalMath.Tests
             var rat = new Rational(10, 7);
             try {
                 rat.Denominator = 0;
-                Debug.Fail("");
+                Assert.Fail("");
             }
             catch(DivideByZeroException) {
 
-                Debug.Assert(true);
+                Assert.IsTrue(true);
             }
         }
 
