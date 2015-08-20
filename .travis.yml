@@ -1,8 +1,8 @@
 
 language: csharp
-solution: RationalMath.sln
+solution: ./RationalMath/RationalMath.sln
 install:
-  - nuget restore RationalMath.sln
+  - nuget restore ./RationalMath/RationalMath.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
 script:
   - xbuild /p:Configuration=Release RationalMath/RationalMath.sln
