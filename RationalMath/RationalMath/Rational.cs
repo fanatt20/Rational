@@ -43,12 +43,13 @@ namespace RationalMath
             }
         }
 
-        public double ToDouble()
+        public static Rational operator +(Rational val, Rational other)
         {
-            return Numerator / Denominator;
+            return new Rational(val.Numerator*other.Denominator+val.Denominator*other.Numerator,val.Denominator*val.Denominator);
+            
         }
 
-        public static implicit operator double(Rational val)
+        public static explicit operator double(Rational val)
         {
             return val.Numerator / val.Denominator;
         }
@@ -62,25 +63,16 @@ namespace RationalMath
         {
             return val.Numerator / val.Denominator;
         }
-        
-        public static bool operator ==(Rational val, double other)
+
+        public static bool operator ==(Rational val, Rational other)
         {
-            return Math.Abs(other - val) <= Eps;
+            return val.Numerator == other.Numerator && val.Denominator == other.Denominator;
         }
 
-        public static bool operator !=(Rational val, double other)
+        public static bool operator !=(Rational val, Rational other)
         {
-            return Math.Abs(other - val) > Eps;
+            return val.Numerator != other.Numerator || val.Denominator != other.Denominator;
         }
 
-        public static bool operator >(Rational val, double other)
-        {
-            return val > other;
-        }
-
-        public static bool operator <(Rational val, double other)
-        {
-            return val < other;
-        }
     }
 }
