@@ -18,7 +18,7 @@ namespace RationalMath.Tests
         [Test]
         public void TestCompare_withDoubleFloatInt_Passed()
         {
-            var rat = new Rational(125, 5);
+            var rat = new Rational(625, 5);
             Assert.AreEqual(125, (double)rat, "Invalid cast to double");
             Assert.AreEqual(125, (float)rat, "Invalid cast to float");
             Assert.AreEqual(125, (int)rat, "Invalid cast to int");
