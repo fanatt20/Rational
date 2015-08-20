@@ -1,6 +1,8 @@
 
 language: csharp
 solution: ./RationalMath/RationalMath.sln
+addons:
+  artifacts: true
 install:
   - nuget restore ./RationalMath/RationalMath.sln
   - nuget install NUnit.Runners -Version 2.6.4 -OutputDirectory testrunner
