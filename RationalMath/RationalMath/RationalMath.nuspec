@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>1.0.0.1</version>
+    <title>$title$</title>
+    <authors>Horadric</authors>
+    <owners>Horadric</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Horadric</description>
+    <copyright>Copyright 2015</copyright>
+  </metadata>
+</package>                                                 
